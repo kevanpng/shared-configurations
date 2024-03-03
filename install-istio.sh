@@ -3,8 +3,6 @@
 
 curl -L https://istio.io/downloadIstio | ISTIO_VERSION=1.20.3 TARGET_ARCH=x86_64 sh -
 
-pushd istio-1.20.3/bin
-
 # bring istio to ec2-user space
 sudo cp istio-1.20.3/bin/istioctl /usr/bin
 
@@ -20,12 +18,11 @@ sudo cp istio-1.20.3/bin/istioctl /usr/bin
 istioctl install --set profile=demo -y --set meshConfig.defaultConfig.holdApplicationUntilProxyStarts=true
 
 export KUBECONFIG=~/admin.conf
-
+# alias kubectl='sudo k0s kubectl'
 # configure istio to be enabled for default namespace
-kubectl label namespace default istio-injection=enabled
+sudo k0s kubectl label namespace default istio-injection=enabled
 # To uninstall istio
 # ./istioctl uninstall --purge
 
 # understanding dns  https://istio.io/v1.12/blog/2020/dns-proxy/
 
-popd
