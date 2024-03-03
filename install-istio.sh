@@ -3,7 +3,7 @@
 
 curl -L https://istio.io/downloadIstio | ISTIO_VERSION=1.20.3 TARGET_ARCH=x86_64 sh -
 
-# bring istio to ec2-user space
+# bring istio to root space
 sudo cp istio-1.20.3/bin/istioctl /usr/bin
 
 # add istioctl to path

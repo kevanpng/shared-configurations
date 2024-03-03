@@ -5,6 +5,8 @@ chmod +x install-istio.sh
 ./install-istio.sh
 chmod +x install-prometheus-grafana.sh
 ./install-prometheus-grafana.sh
+chmod +x install-aws-load-balancer-controller.sh
+./install-aws-load-balancer-controller.sh
 chmod +x install-code-server.sh
 ./install-code-server.sh
 chmod +x deploy-app-bookinfo.sh
