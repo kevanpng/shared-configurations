@@ -17,8 +17,6 @@ https://stackoverflow.com/questions/51468491/how-kubectl-port-forward-works
 
 - [ ] Postgres (stateful workload)
 - [ ] Kafka
-- [ ] horizontal pod autoscaler
-- [ ] cluster autoscaler karpenter
 - [ ] ECR
 
 

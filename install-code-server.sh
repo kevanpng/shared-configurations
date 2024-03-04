@@ -4,16 +4,12 @@ set -ex
 # Create PV for code server PVC
 sudo k0s kubectl apply -f code-server-pv.yaml
 
-git clone https://github.com/coder/code-server
 
-
-helm upgrade --install code-server code-server/ci/helm-chart \
+helm upgrade --install code-server ./code-server \
   --set service.type="NodePort"
-#  --set persistence.enabled=true \
-
   # --set service.port=30000 \
 
-#
+
 
 
 
