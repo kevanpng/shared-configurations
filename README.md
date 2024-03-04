@@ -1,6 +1,7 @@
 # References
 https://istio.io/latest/docs/setup/getting-started/#bookinfo
 https://stackoverflow.com/questions/51468491/how-kubectl-port-forward-works
+https://learncloudnative.com/blog/2020-01-09-deploying_multiple_gateways_with_istio
 
 # Apps to add
 - [ ] code server

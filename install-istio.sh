@@ -15,7 +15,11 @@ sudo cp istio-1.20.3/bin/istioctl /usr/bin
 # https://discuss.istio.io/t/how-to-hold-a-application-until-proxy-starts/8346/4
 # https://github.com/kubernetes/kubernetes/issues/107260
 # need to fix istio-proxy readiness probe fail
-istioctl install --set profile=demo -y --set meshConfig.defaultConfig.holdApplicationUntilProxyStarts=true
+#  istioctl install --set profile=demo -y --set meshConfig.defaultConfig.holdApplicationUntilProxyStarts=true
+# https://istio.io/latest/docs/reference/commands/istioctl/#istioctl-install
+# https://istio.io/v1.14/blog/2018/aws-nlb/
+istioctl install -y --filename istio-values.yaml
+
 
 export KUBECONFIG=~/admin.conf
 # alias kubectl='sudo k0s kubectl'
