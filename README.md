@@ -96,6 +96,6 @@ And creating a configuration change to istio-values.yaml and istioctl install ag
   - update values, istioctl install, successfully updated the istio ingress gateway with new annotations without killing istio gateway
 - [x] display product page with http
 - [ ] how to configure routing, why does 8080 at the ingress gateway work?
-- [ ] https. When NLB is created, it does not have CERT at all, it needs to be manually added to the NLB to serve HTTPS traffic
+- [ ] https. When NLB is created, it does not have CERT at all, it needs to be manually added to the NLB to serve HTTPS traffic. Is there a way to do this automatically using ACM? or how about cert-manager that comes with load balancer controller and kube prom?
 - [ ] what if i destroy the ec2 instance, will
 
