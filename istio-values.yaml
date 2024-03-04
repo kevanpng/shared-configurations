@@ -12,5 +12,8 @@ spec:
           serviceAnnotations:
             # https://kubernetes-sigs.github.io/aws-load-balancer-controller/v2.5/guide/service/annotations/#lb-type
             service.beta.kubernetes.io/aws-load-balancer-nlb-target-type: "instance"
-            service.beta.kubernetes.io/aws-load-balancer-type: "nlb"
+            service.beta.kubernetes.io/load-balancer-source-ranges: 58.182.142.234/32 # source public IP
+            service.beta.kubernetes.io/aws-load-balancer-scheme: "internet-facing"
+#            service.beta.kubernetes.io/aws-load-balancer-type: "nlb"
+            service.beta.kubernetes.io/aws-load-balancer-type: "external"
             service.beta.kubernetes.io/aws-load-balancer-subnets: default-public-subnet-1 # must explicitly declare the name of the subnet or AWS load balancer controller cannot provision the NLB
