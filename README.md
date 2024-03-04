@@ -94,4 +94,8 @@ And creating a configuration change to istio-values.yaml and istioctl install ag
 ## Tests and expected result
 - [x] when update annotation on ingress gateway load-balancer-source-ranges, NLB should update, not be killed and reprovisioned. This leads to outage.
   - update values, istioctl install, successfully updated the istio ingress gateway with new annotations without killing istio gateway
-- [ ] https 
+- [x] display product page with http
+- [ ] how to configure routing, why does 8080 at the ingress gateway work?
+- [ ] https. When NLB is created, it does not have CERT at all, it needs to be manually added to the NLB to serve HTTPS traffic
+- [ ] what if i destroy the ec2 instance, will
+
