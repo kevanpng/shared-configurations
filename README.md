@@ -1,7 +1,5 @@
 # References
-https://istio.io/latest/docs/setup/getting-started/#bookinfo
-https://stackoverflow.com/questions/51468491/how-kubectl-port-forward-works
-https://learncloudnative.com/blog/2020-01-09-deploying_multiple_gateways_with_istio
+
 
 
 # Apps to add
@@ -111,7 +109,53 @@ And creating a configuration change to istio-values.yaml and istioctl install ag
 # ISTIO
 ## References
 https://istio.io/latest/docs/reference/config/networking/gateway/
+https://istio.io/latest/docs/setup/getting-started/#bookinfo
+https://stackoverflow.com/questions/51468491/how-kubectl-port-forward-works
+https://learncloudnative.com/blog/2020-01-09-deploying_multiple_gateways_with_istio
+
+
 ## Troubleshooting
+
+https://istio.io/latest/docs/reference/config/analysis/ist0162/
+
+If i changed ingress gateway servvers[0].port.number to 8081, there will be a warning
+
+Warning [IST0162] (Gateway default/bookinfo-gateway) The gateway is 
+listening on a target port (port 8081) that is not defined in the 
+Service associated with its workload instances (Pod selector istio=ingressgateway). 
+If you need to access the gateway port through the gateway Service, i
+t will not be available.
+
+**istio ingressgateway service -> istio ingressgateway
+port:targetport
+80: 8080     -> 8080:whatever vservice**
+
+we can see this configuration on the LoadBalancer Service created as the istio ingress gateway
+LoadBalancer Ingress:     k8s-istiosys-istioing-c78b85ef4e-87ffd846e17c6382.elb.ap-southeast-1.amazonaws.com
+Port:                     status-port  15021/TCP
+TargetPort:               15021/TCP
+NodePort:                 status-port  30504/TCP
+Endpoints:                10.244.0.6:15021
+
+```
+Port:                     http2  80/TCP
+TargetPort:               8080/TCP
+NodePort:                 http2  32452/TCP
+
+For context of Istio and NLB, this means
+NLB is listening on port 80 -> forward request to target group of this ec2 instance on 
+nodeport 32452, which will then be converted by the istioingress gateway service and forwarded
+to the targetport 8080, which will then go to the Gateway Resource for routing 
+```
+
+
+
+
+
+
+
+
+15021 is the envoy proxy port for healthz/ready
 
 
 ## Tests and expected result

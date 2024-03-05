@@ -14,7 +14,8 @@ spec:
     istio: ingressgateway # use istio default controller
   servers:
   - port:
-      number: 8080 # listen on this port
+      number: 8080 # listen on the istio ingressgateway service TARGETport. must be 8080 if using default istio ingressgateway service
+      # port ,targetport
       name: http
       protocol: HTTP
     hosts:
@@ -46,3 +47,29 @@ spec:
         host: productpage
         port:
           number: 9080
+
+
+# THere is a default gateway service CREATED for the above ingress gateway
+# Default Gateway Service
+
+#apiVersion: v1
+#kind: Service
+#metadata:
+#  name: istio-ingressgateway
+#spec:
+#  selector:
+#    istio: ingressgateway
+#  ports:
+#  - name: status-port
+#    port: 15021
+#    protocol: TCP
+#    targetPort: 15021
+#  - name: http2
+#    port: 80
+#    protocol: TCP
+#    targetPort: 8080
+#  - name: https
+#    port: 443
+#    protocol: TCP
+#    targetPort: 8443
+#
