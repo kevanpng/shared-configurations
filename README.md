@@ -3,24 +3,40 @@ https://istio.io/latest/docs/setup/getting-started/#bookinfo
 https://stackoverflow.com/questions/51468491/how-kubectl-port-forward-works
 https://learncloudnative.com/blog/2020-01-09-deploying_multiple_gateways_with_istio
 
+
 # Apps to add
 - [ ] code server
 - [ ] istio, kiali
 - [ ] horizontal pod autoscaler
-- [ ] cluster autoscaler karpenter
+- [ ] cluster autoscaler, or karpenter
 - [ ] prometheus, grafana, alert manager
 - [ ] aws load balancer controller
 - [ ] external secrets
 - [ ] EBS CSI
 - [ ] EFS CSI
-
+- [ ] gatekeeper
+- [ ] ELK
+- [ ] tracing (see what istio recommends)
+- [ ] OTEL
+- [ ] Argo CD
 - [ ] teleprescence
+- [ ] aqua security (runtime protection)
 
 - [ ] Postgres (stateful workload)
 - [ ] Kafka
 - [ ] ECR
 
+# Architecture patterns
+- [ ] multi AZ EBS
+- [ ] multi region
+- [ ] multi cloud, single cluster k8s
+  - active, active
+  - active, passive
+- [ ] multi cluster, single cloud (linked by istio)
+- [ ] SRE automated incident management workflows and remediation
 
+# Resiliency and performance Tests (chaos)
+- [ ] istio related fault injection
 
 
 # best practice cloud development environment
@@ -57,6 +73,11 @@ stick with code server
 - [ ] extensions baked into helm chart, no need to always install at user side
 - [ ] clone private github repo with ssh keys
 # AWS Load balancer controller 
+
+## References
+https://repost.aws/knowledge-center/load-balancer-troubleshoot-creating
+https://www.infoq.com/news/2018/01/microservices-resiliency-istio/
+
 ## Troubleshooting
 AWS load balancer controller created NLB wth target groups that had no targets.
 
@@ -88,6 +109,8 @@ And creating a configuration change to istio-values.yaml and istioctl install ag
 
 
 # ISTIO
+## References
+https://istio.io/latest/docs/reference/config/networking/gateway/
 ## Troubleshooting
 
 
