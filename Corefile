@@ -1,0 +1,20 @@
+# /etc/coredns/Corefile
+
+# for cordns-wide configurations
+#. {
+#    reload #reload corefile every 1 min
+#    erratic
+#}
+
+# use 1.1.1.1 cloudflare dns
+.:53 {
+    forward . tls://2606:4700:4700::1111 tls://1.1.1.1
+    log
+    errors
+    cache
+}
+kevan.home:53 {
+    log
+    errors
+    file kevan.home.db # working dir is /var/lib/coredns
+}
