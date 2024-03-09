@@ -10,4 +10,5 @@ $TTL 3600
 @       IN      NS      localhost.
 
 ; Hosts
-@       IN      A       192.168.18.40
+@                   IN      A       192.168.18.40
+*.kevan.home.       IN      A       192.168.18.40
