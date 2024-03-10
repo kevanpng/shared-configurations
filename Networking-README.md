@@ -31,6 +31,16 @@ adding zone entry to coredns and configuring the  authoritative  nameserver for 
 https://superuser.com/questions/1647407/how-to-properly-test-a-local-dns-server-locally
 https://coredns.io/manual/toc/#configuration
 
+setting permanent resolveconf
+https://www.tecmint.com/set-permanent-dns-nameservers-in-ubuntu-debian/
+
+Problem: When there is nameserver 127.0.0.1 on the /etc/resolv.conf and /etc/resolveconf/resolv.conf.d/head , it will tell the desktop that 
+dns should be resolve on localhost (because there is a coredns server running). However, how K0s cluster works is that it will copy the host's /etc/resolv.conf and put that configuration into the 
+coredns of the cluster so that it can resolv ip using the desktop. However, since there is this loopback entry in etc/resolve.conf, the coredns in the cluster will loopback
+into itself, which creates an infinite loop, crashing the coredns pod. 
+solution: change the 127.0.0.1 entry into the private ipv4 address of the desktop so that it is still pointing to the coredns server ip but without being loopback.
+the risk is that the ip of the desktop need to be static, which is done by setting on the router.
+
 
 
 ## static ips
