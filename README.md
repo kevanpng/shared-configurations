@@ -33,7 +33,7 @@
 Stateful work loads
 - [ ] Postgres (stateful workload)
 - [ ] Kafka
-- [ ] ECR
+
 
 # Architecture patterns
 - [ ] multi AZ EBS
