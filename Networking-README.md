@@ -15,6 +15,16 @@ Executed these steps and it works.
 Local desktop stop using systemd-resolved to resolve DNS, and it now uses coredns that is working locally backed by cloudflare 
 https://dev.to/n1try/how-to-enable-dns-over-tls-on-ubuntu-using-coredns-18mp
 https://github.com/coredns/deployment/tree/master/systemd
+
+How systemd-resolved works
+https://wiki.archlinux.org/title/systemd-resolved
+
+How coredns works 
+https://coredns.io/plugins/file/
+
+How to test dns
+https://superuser.com/questions/1647407/how-to-properly-test-a-local-dns-server-locally
+
 to reverse the steps, just execute the reverse of the above link.
 
 adding zone entry to coredns and configuring the  authoritative  nameserver for that zone
