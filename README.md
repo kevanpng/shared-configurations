@@ -2,7 +2,7 @@
 
 
 
-# Apps to add
+# Roadmap
 - [ ] code server
 - [ ] istio, kiali
 - [ ] horizontal pod autoscaler
@@ -19,7 +19,18 @@
 - [ ] Argo CD
 - [ ] teleprescence
 - [ ] aqua security (runtime protection)
+- [ ] keycloak
+- [ ] AD + adfs local desktop
+- [ ] ingress gateway integration with keycloak -> ADFS -> AD
+- [ ] Jenkins in k8s
+- [ ] gitlab / onprem gitea
+- [ ] private CA implementation for certs used in internal apps
+- [ ] backstage - Developer IDP
+- [ ] terraform, terrakube?
+- [ ] crossplane?
+- [ ] Elixir apps
 
+Stateful work loads
 - [ ] Postgres (stateful workload)
 - [ ] Kafka
 - [ ] ECR
