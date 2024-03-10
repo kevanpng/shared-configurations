@@ -1,9 +1,9 @@
 export KUBECONFIG=~/admin.conf
 
-sudo k0s kubectl apply -f ./apps/bookinfo/bookinfo.yaml
+sudo k0s kubectl apply -f ./bookinfo/bookinfo.yaml
 
 # apply istio gateway and virtual service
-sudo k0s kubectl apply -f ./apps/bookinfo/bookinfo-gateway.yaml
+sudo k0s kubectl apply -f ./bookinfo/bookinfo-gateway.yaml
 
 # Check for validation issues after deploying gateway and Vservice
 istioctl analyze

@@ -5,16 +5,18 @@ set -ex
 sudo k0s kubectl apply -f code-server-pv.yaml
 
 
-helm upgrade --install code-server ./code-server \
-  --set service.type="NodePort"
+#helm upgrade --install code-server ./code-server \
+#  --set service.type="NodePort"
   # --set service.port=30000 \
 
+helm upgrade --install code-server ./code-server
 
-
+# add gateway and vservice to code server
+k apply -f code-server-gateway.yaml
 
 
 export CODE_PASSWORD=$(sudo k0s kubectl get secret --namespace default code-server -o jsonpath="{.data.password}" | base64 --decode)
-export NODE_PORT=$(sudo k0s kubectl get --namespace default -o jsonpath="{.spec.ports[0].nodePort}" services code-server)
+# export NODE_PORT=$(sudo k0s kubectl get --namespace default -o jsonpath="{.spec.ports[0].nodePort}" services code-server)
 # custom PV for the code server, should have been created with helm
 #kubectl apply -f pv.yaml
 
