@@ -29,7 +29,10 @@
 - [ ] terraform, terrakube?
 - [ ] crossplane?
 - [ ] Elixir apps
-
+- [ ] SPIFFE / SPIRE for onprem workload identity + istio
+- [ ] Istio ingressgateway with oauth2 + keycloak + ADFS + AD
+- [ ] ISTIO OPA external authorization for pod to pod authz
+- [ ] Istio use External private CA for CA federation
 Stateful work loads
 - [ ] Postgres (stateful workload)
 - [ ] Kafka
