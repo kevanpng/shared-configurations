@@ -51,3 +51,18 @@ if ip address of istio ingress change, update kevan.home.db
 
 all the configurations are specified here. where are all the logs, errors, working dir
 https://github.com/coredns/deployment/tree/master/systemd
+
+
+https://www.tecmint.com/set-permanent-dns-nameservers-in-ubuntu-debian/
+
+
+## Squid proxy
+
+managed to use it as a proxy for multiple devices, including phone.
+but never managed to see the caching for static websites having cache hit.
+perhaps the test wasnt done properly, need to repeat the test with other
+image websites or bundles.
+
+BIG PROBLEM -> does not support wss websockets , so code-server crashed.
+squid proxy has no plans to support that as well. so this means that
+it cannot be used as a proxy for workloads that need WSS.
